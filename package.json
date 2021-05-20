@@ -1,0 +1,11 @@
+{
+  "name": "jpeg_2_css",
+  "version": "0.0.1",
+  "description": "A library to convert a jpeg to a blurred CSS linear gradient",
+  "main": "index.js",
+  "author": "Nick Argyle",
+  "license": "MIT",
+  "dependencies": {
+    "sharp": "^0.28.2"
+  }
+}
