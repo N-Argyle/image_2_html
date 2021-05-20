@@ -1,6 +1,6 @@
 {
   "name": "image_2_html",
-  "version": "0.0.2",
+  "version": "0.0.4",
   "description": "A library to convert an image buffer into html, with a blurred represenatation of the image to be used as a background or placeholder. ",
   "main": "index.js",
   "author": "Nick Argyle",
