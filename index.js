@@ -1,12 +1,11 @@
-const fs = require('fs');
 const sharp = require('sharp');
 
-const main = async (width, height, blurAmount, buffer) => {
+module.exports = async (width, height, blurAmount, buffer) => {
   const { data, info } = await sharp(buffer)
     .removeAlpha()
     .raw()
     .blur(10)
-    .resize(200)
+    .resize(width)
     .toBuffer({ resolveWithObject: true });
 
   const rgbFlat = [...data].map((d) => parseInt(d));
@@ -69,5 +68,3 @@ const main = async (width, height, blurAmount, buffer) => {
 
   return gradient;
 };
-
-module.exports = main;
