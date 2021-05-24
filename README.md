@@ -1,6 +1,6 @@
 # Image_2_HTML
 
-This small tool was inspired by Unsplash's lazy loading process. It converts an image file stream into a set of divs that appear as a blurred version of the image. Using divs instead of an image thumbnail as a placeholder creates a very quick page load time. The html output for an image is only around 1.5kb. The idea is, when you upload an via to your sites api, your use this library to generate an html string, which you can then store in your database. Then, when server side rendering a page, instead of inserting an image tag, you insert the generated html, then later lazyload the final image.
+This small tool was inspired by Unsplash's lazy loading process. It converts an image file stream into a set of divs that appear as a blurred version of the image. Using divs instead of an image thumbnail as a placeholder creates a very quick page load time. The html output for an image is only around 1.5kb. The idea is, when you upload an image to your site's api, you use this library to generate an html string, which you can then store in your database. Then, when server side rendering a page, instead of inserting an image tag, you insert the generated html, then later lazyload the final image.
 
 This library only works with server-side node. The underlying library (sharp) will not work in browser based apps.
 
@@ -10,7 +10,7 @@ Usage is very straightforward:
 
 ```js
 const image2html = require('image_2_html');
-image2html(500, 350, 50, imageBuffer).then((html) => doSomethingWithHTML()));
+image2html("500px", "350px", 50, imageBuffer).then((html) => doSomethingWithHTML()));
 ```
 
 The output will appear in the following format:
@@ -43,9 +43,7 @@ The output will appear in the following format:
 
 So this image
 
- ![alt text](https://i.imgur.com/vt76ZiE.jpg)
-
-
+![alt text](https://i.imgur.com/vt76ZiE.jpg)
 
 Generates this set of styled divs
 
@@ -57,8 +55,6 @@ Using fs:
 
 ```const imageBuffer = fs.readFileSync('somefile.jpg')```
 
-
-
 Using node-fetch on an image url:
 
 ```js
@@ -67,5 +63,5 @@ const imageBuffer = await fetch(url)
     .then((resA) => {
       return Buffer.from(resA);
     });
-image2html(500, 350, 50, image).then((html) => console.log(html));
+image2html("50%", "35%", 50, image).then((html) => console.log(html));
 ```

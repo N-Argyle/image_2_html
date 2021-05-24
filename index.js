@@ -5,7 +5,7 @@ module.exports = async (width, height, blurAmount, buffer) => {
     .removeAlpha()
     .raw()
     .blur(10)
-    .resize(width)
+    .resize(600)
     .toBuffer({ resolveWithObject: true });
 
   const rgbFlat = [...data].map((d) => parseInt(d));
@@ -42,7 +42,7 @@ module.exports = async (width, height, blurAmount, buffer) => {
   ];
 
   const gradient = `
-    <div style="height: ${height}px; width: ${width}px; overflow: hidden;">
+    <div style="height: ${height}; width: ${width}; overflow: hidden;">
       <div style="background: rgb(${gradientPoints[7].toString()}); width: 100%; height: 100%;">
         <div style="display: flex; width: 100%; height: 100%; flex-wrap: wrap; filter: blur(${blurAmount}px);">
           <div style="background: rgb(${gradientPoints[0].toString()}); width: 25%; height: 25%"></div>
