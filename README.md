@@ -63,5 +63,5 @@ const imageBuffer = await fetch(url)
     .then((resA) => {
       return Buffer.from(resA);
     });
-image2html("50%", "35%", 50, image).then((html) => console.log(html));
+image2html("50%", "35%", 50, imageBuffer).then((html) => console.log(html));
 ```
