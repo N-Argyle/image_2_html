@@ -60,8 +60,8 @@ Using node-fetch on an image url:
 ```js
 const imageBuffer = await fetch(url)
     .then((res) => res.arrayBuffer())
-    .then((resA) => {
-      return Buffer.from(resA);
+    .then((image) => {
+      return Buffer.from(image);
     });
 image2html("50%", "35%", 50, imageBuffer).then((html) => console.log(html));
 ```
